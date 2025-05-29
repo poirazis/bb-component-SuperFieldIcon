@@ -6,10 +6,9 @@
     "friendlyName": "Super Field - Icon",
     "description": "An Icon Input Field component for Budibase",
     "icon": "Car",
-    "requiredAncestors": ["form"],
-    "block" : true,
-    "ejectable" : false,
-    "context" : [
+    "block": true,
+    "ejectable": false,
+    "context": [
       {
         "type": "static",
         "values": [
@@ -17,7 +16,7 @@
             "label": "Value",
             "key": "value",
             "type": "string"
-          } 
+          }
         ]
       }
     ],
@@ -26,12 +25,13 @@
         "type": "field/string",
         "label": "Field",
         "key": "field",
-        "required": true
+        "defaultValue": "Icon Field"
       },
       {
         "type": "text",
         "label": "Label",
-        "key": "label"
+        "key": "label",
+        "placeholder": "Field Name"
       },
       {
         "type": "text",
@@ -48,9 +48,9 @@
         "type": "text",
         "label": "Formatted value",
         "key": "template",
-        "placeholder" : "{{ Value }}",
+        "placeholder": "{{ Value }}",
         "supportsConditions": false,
-        "nested" : true
+        "nested": true
       },
       {
         "type": "text",
@@ -61,7 +61,7 @@
         "type": "text",
         "label": "Input Mask",
         "key": "mask",
-        "hidden" : true
+        "hidden": true
       },
       {
         "type": "validation/string",
@@ -81,22 +81,14 @@
       },
       {
         "type": "boolean",
-        "label": "Debounced",
-        "key": "debounced",
-        "defaultValue": false
-      },
-      {
-        "type": "boolean",
-        "label": "Suggestions",
-        "key": "showSuggestions",
-        "hidden" : true,
-        "defaultValue": false
+        "label": "Categories",
+        "key": "showCategories"
       },
       {
         "type": "number",
         "label": "Debounce Delay (ms)",
         "key": "debounceDelay",
-        "minValue" : "200",
+        "minValue": "200",
         "defaultValue": 750,
         "dependsOn": "debounced"
       },
@@ -118,46 +110,59 @@
         }
       },
       {
-        "type" : "boolean",
-        "key"  : "clearValueIcon",
+        "type": "boolean",
+        "key": "clearValueIcon",
         "label": "Clear Value Icon"
       },
       {
-        "type" : "boolean",
-        "key"  : "showIcon",
+        "type": "boolean",
+        "key": "showIcon",
         "label": "Add Inline Icon"
       },
       {
-        "type" : "icon",
-        "key"  : "icon",
+        "type": "icon",
+        "key": "icon",
         "label": "Icon",
-        "resetOn" : "showIcon",
-        "dependsOn" : "showIcon"
+        "resetOn": "showIcon",
+        "dependsOn": "showIcon"
       },
       {
-        "type" : "boolean",
-        "key"  : "customButtons",
-        "label": "Add Buttons"
-      },
-      {
-        "type" : "buttonConfiguration",
-        "key"  : "buttons",
-        "nested" : true,
-        "dependsOn" : "customButtons"
-      },
-      {
-        "tag" : "style",
-        "type" : "select",
-        "key" : "mode",
-        "label" : "Mode",
-        "defaultValue": "formInput",
-        "options" : [
-          { "label" : "Form Input", "value" : "formInput" },
-          { "label" : "Inline Input", "value" : "inlineInput" }
+        "tag": "style",
+        "type": "select",
+        "label": "Label Position",
+        "key": "labelPosition",
+        "showInBar": true,
+        "barStyle": "buttons",
+        "defaultValue": "fieldGroup",
+        "options": [
+          {
+            "label": "Disabled",
+            "value": false,
+            "barIcon": "Cancel",
+            "barTitle": "Disabled"
+          },
+          {
+            "label": "Auto",
+            "value": "fieldGroup",
+            "barIcon": "Group",
+            "barTitle": "Field Group"
+          },
+          {
+            "label": "Above",
+            "value": "above",
+            "barIcon": "MarginTop",
+            "barTitle": "Above"
+          },
+          {
+            "label": "Left",
+            "value": "left",
+            "barIcon": "MarginLeft",
+            "barTitle": "Left"
+          }
         ]
       },
       {
-        "tag" : "style",
+        "tag": "style",
         "type": "select",
         "label": "Layout",
         "key": "span",
@@ -166,10 +171,10 @@
         "barStyle": "buttons",
         "options": [
           {
-            "label": "1 column",
-            "value": 6,
-            "barIcon": "Stop",
-            "barTitle": "1 column"
+            "label": "3 columns",
+            "value": 2,
+            "barIcon": "ViewColumn",
+            "barTitle": "3 columns"
           },
           {
             "label": "2 columns",
@@ -178,10 +183,39 @@
             "barTitle": "2 columns"
           },
           {
-            "label": "3 columns",
-            "value": 2,
-            "barIcon": "ViewColumn",
-            "barTitle": "3 columns"
+            "label": "1 column",
+            "value": 6,
+            "barIcon": "Stop",
+            "barTitle": "1 column"
+          },
+          {
+            "label": "Full Width",
+            "value": 12,
+            "barIcon": "Maximize",
+            "barTitle": "Full Width"
+          }
+        ]
+      },
+      {
+        "tag": "style",
+        "type": "select",
+        "showInBar": true,
+        "barStyle": "buttons",
+        "label": "Swatch",
+        "key": "swatch",
+        "defaultValue": "square",
+        "options": [
+          {
+            "label": "Square",
+            "value": "square",
+            "barIcon": "Stop",
+            "barTitle": "Square"
+          },
+          {
+            "label": "Circle",
+            "value": "circle",
+            "barIcon": "Circle",
+            "barTitle": "Circle"
           }
         ]
       }
