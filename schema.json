@@ -110,23 +110,6 @@
         }
       },
       {
-        "type": "boolean",
-        "key": "clearValueIcon",
-        "label": "Clear Value Icon"
-      },
-      {
-        "type": "boolean",
-        "key": "showIcon",
-        "label": "Add Inline Icon"
-      },
-      {
-        "type": "icon",
-        "key": "icon",
-        "label": "Icon",
-        "resetOn": "showIcon",
-        "dependsOn": "showIcon"
-      },
-      {
         "tag": "style",
         "type": "select",
         "label": "Label Position",
@@ -163,38 +146,11 @@
       },
       {
         "tag": "style",
-        "type": "select",
-        "label": "Layout",
+        "type": "number",
+        "label": "Size",
         "key": "span",
         "defaultValue": 6,
-        "showInBar": true,
-        "barStyle": "buttons",
-        "options": [
-          {
-            "label": "3 columns",
-            "value": 2,
-            "barIcon": "ViewColumn",
-            "barTitle": "3 columns"
-          },
-          {
-            "label": "2 columns",
-            "value": 3,
-            "barIcon": "ColumnTwoA",
-            "barTitle": "2 columns"
-          },
-          {
-            "label": "1 column",
-            "value": 6,
-            "barIcon": "Stop",
-            "barTitle": "1 column"
-          },
-          {
-            "label": "Full Width",
-            "value": 12,
-            "barIcon": "Maximize",
-            "barTitle": "Full Width"
-          }
-        ]
+        "min": 2
       },
       {
         "tag": "style",
@@ -218,6 +174,12 @@
             "barTitle": "Circle"
           }
         ]
+      },
+      {
+        "type": "boolean",
+        "key": "invisible",
+        "label": "Invisible",
+        "defaultValue": false
       }
     ]
   }
