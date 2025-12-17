@@ -46,22 +46,8 @@
       },
       {
         "type": "text",
-        "label": "Formatted value",
-        "key": "template",
-        "placeholder": "{{ Value }}",
-        "supportsConditions": false,
-        "nested": true
-      },
-      {
-        "type": "text",
         "label": "Help text",
         "key": "helpText"
-      },
-      {
-        "type": "text",
-        "label": "Input Mask",
-        "key": "mask",
-        "hidden": true
       },
       {
         "type": "validation/string",
@@ -154,28 +140,6 @@
       },
       {
         "tag": "style",
-        "type": "select",
-        "showInBar": true,
-        "barStyle": "buttons",
-        "label": "Swatch",
-        "key": "swatch",
-        "defaultValue": "square",
-        "options": [
-          {
-            "label": "Square",
-            "value": "square",
-            "barIcon": "Stop",
-            "barTitle": "Square"
-          },
-          {
-            "label": "Circle",
-            "value": "circle",
-            "barIcon": "Circle",
-            "barTitle": "Circle"
-          }
-        ]
-      },
-      {
         "type": "boolean",
         "key": "invisible",
         "label": "Invisible",
